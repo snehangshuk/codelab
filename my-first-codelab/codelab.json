@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2022-08-30T22:46:35Z",
+  "id": "my-first-codelab",
+  "duration": 2,
+  "title": "Your First CodeLab",
+  "authors": "Snehangshu Karmakar",
+  "summary": "In this codelab, you'll be able understand what Kubernetes is installthe tools required to get started with Kubernetes cluster",
+  "source": "1_99U1lfJAYNC5wmrGmpVRGimAM8hpP_4p2IMMaTskC8",
+  "theme": "web",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "Web"
+  ],
+  "tags": [
+    "devtest",
+    "web"
+  ],
+  "feedback": "https://github.com/snehangshuk/codelab/issues",
+  "url": "my-first-codelab"
+}
