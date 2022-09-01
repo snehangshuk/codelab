@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <meta name="theme-color" content="#4F7DC9">
   <meta charset="UTF-8">
-  <title>Your First CodeLab</title>
+  <title>My First CodeLab</title>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
@@ -22,8 +22,8 @@
 <body>
   <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
   <google-codelab codelab-gaid=""
-                  id="my-first-codelab"
-                  title="Your First CodeLab"
+                  id="test"
+                  title="My First CodeLab"
                   environment="web"
                   feedback-link="https://github.com/snehangshuk/codelab/issues">
     
@@ -36,7 +36,7 @@
 <p>The major drawback to traditionally deployed software applications is that the application&#39;s dependencies are entangled with the runtime environment. An application may break when updates or patches are applied to the base operating system (OS).</p>
 <p>For example, an OS update to the TLS shared library removes TLSE1.0 as a supported protocol. This breaks the deployed Python application because it is written to use the TLSE1.0 protocol for network requests. This forces the system administrator to roll back the OS update to keep the application running, preventing other applications from using the benefits of the updated package. Therefore, a company developing traditional software applications may require a full set of tests to guarantee that an OS update does not affect applications running on the host. Furthermore, a traditionally deployed application must be stopped before updating the associated dependencies. To minimize application downtime, organizations design and implement complex systems to provide high availability of their applications. Maintaining multiple applications on a single host often becomes cumbersome, and any deployment or update has the potential to break one of the organization&#39;s applications.</p>
 <p>The below figure describes the difference between applications running as containers and applications running on the host operating system.</p>
-<p class="image-container"><img style="width: 624.00px" src="img/8e27d420a23ca8ff.png"></p>
+<p class="image-container"><img alt="8e27d420a23ca8ff.png" style="width: 624.00px" src="img/8e27d420a23ca8ff.png"></p>
 <p>Alternatively, a software application can be deployed using a container. A container is a set of one or more processes that are isolated from the rest of the system. Containers provide many of the same benefits as virtual machines, such as security, storage, and network isolation. Containers require far fewer hardware resources and are quick to start and terminate. They also isolate the libraries and the runtime resources (such as CPU and storage) for an application to minimize the impact of any OS update to the host OS.</p>
 <p>The <em>Open Container Initiative</em> provides a set of industry standards that define a container runtime specification and a container image specification.</p>
 <p>There are many <em>container engines</em> available to manage and execute individual containers, including Rocket, Drawbridge, LXC, Docker, and Podman.</p>
@@ -50,10 +50,10 @@
 </ul>
 <p>Further, containers are an ideal approach when using microservices for application development. Each service is encapsulated in a lightweight and reliable container environment that can be deployed to a production or development environment. The collection of containerized services required by an application can be hosted on a single machine, removing the need to manage a machine for each service.</p>
 <p>In contrast, many applications are not well suited for a containerized environment. For example, applications accessing low-level hardware information, such as memory, file systems, and devices may be unreliable due to container limitations.</p>
-<aside class="warning"><p><strong>Note:</strong> To simplify this codelab, and explain the fundamentals of providing an offline experience, we&#39;re using vanilla JavaScript. In a production app, we strongly recommend using tools like <a href="https://developers.google.com/web/tools/workbox/" target="_blank">Workbox</a> to build your service worker. It removes many of the sharp edges and dark corners you may run into.</p>
+<aside class="warning"><p><strong>Note:</strong> To simplify this codelab, and explain the fundamentals of providing an offline experience, we&#39;re using vanilla JavaScript. In a production app, we strongly recommend using tools like  <a href="https://developers.google.com/web/tools/workbox/" target="_blank">Workbox</a> to build your service worker. It removes many of the sharp edges and dark corners you may run into.</p>
 </aside>
 <h2 class="checklist" is-upgraded><strong>What you&#39;ll learn</strong></h2>
-<ul class="checklist">
+<ul>
 <li>Containers and Kubernetes</li>
 </ul>
 <h2 is-upgraded><strong>What you&#39;ll need</strong></h2>
@@ -77,7 +77,7 @@
 <h2 is-upgraded><strong>Get the container</strong></h2>
 <p>We&#39;ve put everything you need for this project into a Git repo. To get started, you&#39;ll need to grab the code and open it in your favorite dev environment.</p>
 <h3 is-upgraded><strong>Strongly Recommended: Use GitHub to import the repo</strong></h3>
-<h3 is-upgraded><strong>Alternative: </strong></h3>
+<h3 is-upgraded><strong>Alternative:</strong></h3>
 <p>Check this Bash script:</p>
 <pre><code># Download Gnu Parallel
 wget http://ftp.gnu.org/gnu/parallel/parallel-latest.tar.bz2
@@ -88,7 +88,8 @@ make &amp;&amp; sudo make install
 
 # Go to instance store
 cd /media/ephemeral0/
-sudo chmod 777 .</code></pre>
+sudo chmod 777 .
+</code></pre>
 
 
       </google-codelab-step>
