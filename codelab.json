@@ -3,10 +3,10 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2022-08-31T23:55:03Z",
-  "id": "test",
+  "updated": "2022-09-01T00:48:45Z",
+  "id": "bootcamp-journey-setup",
   "duration": 2,
-  "title": "My First CodeLab",
+  "title": "Bootcamp Journey Setup Guide",
   "authors": "Snehangshu Karmakar",
   "summary": "In this codelab, you’ll be able understand what Kubernetes is installthe tools required to get started with Kubernetes cluster",
   "source": "mylab.md",
@@ -22,5 +22,5 @@
     "web"
   ],
   "feedback": "https://github.com/snehangshuk/codelab/issues",
-  "url": "test"
+  "url": "bootcamp-journey-setup"
 }
