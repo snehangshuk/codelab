@@ -1,5 +1,5 @@
 ---
-id: my-first-codelab
+id: bootcamp-journey-setup
 summary: In this codelab, you'll be able understand what Kubernetes is installthe tools required to get started with Kubernetes cluster
 status: [published]
 authors: Snehangshu Karmakar
@@ -11,107 +11,61 @@ duration: 2
 
 ---
 
-# My First CodeLab
+# Bootcamp Journey Setup Guide
+**Last Updated:** 2022-08-31
 
-[Codelab Feedback](https://github.com/snehangshuk/codelab/issues)
-
-
-## Introduction
+[Setup Feedback](https://github.com/snehangshuk/codelab/issues)
 
 
+## Laptop Setup Validation
 
-### Overview of Container Technology
+If you have completed [go/engdayone](http://go/engdayone) steps (also known as [go/HowToSSH](http://go/HowtoSSH)) you will be able to pass all of the validations. If you run into issues during setup or validation please see the Troubleshooting Setup section or reach out to support at #techlounge or [go/helpin](http://go/helpin).
 
-**Last Updated:** 2019-04-30
+### **1. Validate That Eng Tools Are Installed**
 
-### **Containerized Applications**
+Before you can create SSH keys you’ll need to have the eng_tools installed. 
 
-Software applications typically depend on other libraries, configuration files, or services provided by the runtime environment. The traditional runtime environment for a software application is a physical host or virtual machine, and application dependencies are installed as part of the host.
+To validate `eng_tools` are installed 
+From your terminal, run the following command:
+```
+$ mint -h
+```
+If you see the help documentation for `mint` go to *step 2* on go/HowToSSH. If not, follow *step 1* on [go/HowToSSH](http://go/howtossh)
 
-For example, consider a Python application that requires access to a shared library that implements the TLS protocol. Traditionally, a system administrator installs the required package that provides the shared library before installing the Python application.
 
-The major drawback to traditionally deployed software applications is that the application's dependencies are entangled with the runtime environment. An application may break when updates or patches are applied to the base operating system (OS).
+### **2. Set Up Your SSH Keys**
 
-For example, an OS update to the TLS shared library removes TLSE1.0 as a supported protocol. This breaks the deployed Python application because it is written to use the TLSE1.0 protocol for network requests. This forces the system administrator to roll back the OS update to keep the application running, preventing other applications from using the benefits of the updated package. Therefore, a company developing traditional software applications may require a full set of tests to guarantee that an OS update does not affect applications running on the host. Furthermore, a traditionally deployed application must be stopped before updating the associated dependencies. To minimize application downtime, organizations design and implement complex systems to provide high availability of their applications. Maintaining multiple applications on a single host often becomes cumbersome, and any deployment or update has the potential to break one of the organization's applications.
+If you’ve completed *step 2 - 4* on [go/HowToSSH](go/howtossh) and your keys are working proceed to the next validation step.
 
-The below figure describes the difference between applications running as containers and applications running on the host operating system.
+In **Gerrit** with the steps in [go/HowToSSH](http://go/howtossh)
+(keys propagate at 10 minutes after the hour, i.e. 12:10pm, and in some cases can take up to 2 hours to complete)
 
-<img src="img/8e27d420a23ca8ff.png" alt="8e27d420a23ca8ff.png"  width="624.00" />
-
-Alternatively, a software application can be deployed using a container. A container is a set of one or more processes that are isolated from the rest of the system. Containers provide many of the same benefits as virtual machines, such as security, storage, and network isolation. Containers require far fewer hardware resources and are quick to start and terminate. They also isolate the libraries and the runtime resources (such as CPU and storage) for an application to minimize the impact of any OS update to the host OS.
-
-The *Open Container Initiative* provides a set of industry standards that define a container runtime specification and a container image specification.
-
-There are many *container engines* available to manage and execute individual containers, including Rocket, Drawbridge, LXC, Docker, and Podman.
-
-The following are other major advantages to using containers:
-
-* Low hardware footprint
-* Environment isolation
-* Quick deployment
-* Multiple environment deployment
-* Reusability
-
-Further, containers are an ideal approach when using microservices for application development. Each service is encapsulated in a lightweight and reliable container environment that can be deployed to a production or development environment. The collection of containerized services required by an application can be hosted on a single machine, removing the need to manage a machine for each service.
-
-In contrast, many applications are not well suited for a containerized environment. For example, applications accessing low-level hardware information, such as memory, file systems, and devices may be unreliable due to container limitations.
+In **GitHub** with the steps to [manually copy keys to GitHub](https://docs.google.com/document/d/1zAMPT7TknuP0tparZxR-I7rLtlk2vJxtLORUq22VShs/edit#heading=h.h0uom4qlx37x)
 
 > aside negative
 > 
-> **Note:** To simplify this codelab, and explain the fundamentals of providing an offline experience, we're using vanilla JavaScript. In a production app, we strongly recommend using tools like  [Workbox](https://developers.google.com/web/tools/workbox/) to build your service worker. It removes many of the sharp edges and dark corners you may run into.
+> **Note:** For **GitHub** you might not need to copy the SSH keys as the current authentication uses Certificate Authority.
 
-### **What you'll learn**
+### **3. Verify Mint And Keys Are Working Together**
 
-* Containers and Kubernetes
+From your terminal, run the following command:
+```
+$ mint -h
+```
+You should see the help documentation for mint. If this fails, contact #techlounge, you may be missing several things.
 
-### **What you'll need**
+Test Gerrit repo
+From your terminal, move to a folder you’d like to store code in, run the following command:
+```
+$ mint clone bootcamp-backend
+```
+You should see something like this:
+```
+:heavy_check_mark: bootcamp-backend checked out to /Users/jsmith
+```
 
-* Linux skills
 
-
-## Getting set up
+## Troubleshooting Setup
 Duration: 02:00
 
-
-### **Get the tools needed**
-
-Kuberntes website provides all the tools you need to set up the cluster.
-
-<button>[Download the Tools](https://kubernetes.io/)</button>
-
-> aside positive
-> 
-> **Note:** You do not need this if tools are already installed.
-
-#### **Verify you have all the tools**
-
-To test that you do the blah
-
-> aside negative
-> 
-> **Caution:** Blah Blah
-
-### **Get the container**
-
-We've put everything you need for this project into a Git repo. To get started, you'll need to grab the code and open it in your favorite dev environment.
-
-#### **Strongly Recommended: Use GitHub to import the repo**
-
-#### **Alternative:** 
-
-Check this Bash script:
-
-```
-# Download Gnu Parallel
-wget http://ftp.gnu.org/gnu/parallel/parallel-latest.tar.bz2
-tar -jxvf parallel-latest.tar.bz2
-cd parallel-latest
-./configure
-make && sudo make install
-
-# Go to instance store
-cd /media/ephemeral0/
-sudo chmod 777 .
-```
-
-
+If you ran into any problems during the laptop setup reach out to support on slack [#techlounge](https://linkedin-randd.slack.com/archives/CV2LB21FG) or go/helpin. If you’d like to troubleshoot yourself here are some common things you can try.
