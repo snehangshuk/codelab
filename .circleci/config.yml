@@ -26,7 +26,12 @@ jobs:
       - run: wget https://github.com/googlecodelabs/tools/releases/download/v2.2.4/claat-linux-amd64
       - run: chmod +x claat-linux-amd64
       - run: mkdir -p << parameters.output_dir >>
+      - run: git clone git@github.com:snehangshuk/codelab.git
+      - run: cd codelab 
       - run: ./claat-linux-amd64 export -o << parameters.output_dir >> << parameters.inputs >>
+      - store_artifacts:
+          path: mylabs
+          destination: build-artifate
 
 
 # Invoke jobs via workflows
@@ -36,5 +41,5 @@ workflows:
     jobs:
       - codelabs:
           output_dir: mylabs
-          inputs: mylabs.md
+          inputs: codelabs/mylabs.md
 
