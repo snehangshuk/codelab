@@ -25,7 +25,6 @@ jobs:
       - go/install
       - run: wget https://github.com/googlecodelabs/tools/releases/download/v2.2.4/claat-linux-amd64
       - run: chmod +x claat-linux-amd64
-      - checkout
       - run: mkdir -p << parameters.output_dir >>
       - run: ./claat-linux-amd64 export -o << parameters.output_dir >> << parameters.inputs >>
 
