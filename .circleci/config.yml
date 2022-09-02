@@ -28,7 +28,7 @@ jobs:
       - run: mkdir -p << parameters.output_dir >>
       - add_ssh_keys:
           fingerprints:
-            - "ae:ec:93:30:58:f1:eb:4e:3f:e0:51:9b:04:1d:27:19"
+            - "SHA256:p2QAMXNIC1TJYWeIOttrVc98/R1BUFWu3/LiyKgUfQM"
       - run: git clone git@github.com:snehangshuk/codelab.git
       - run: cd codelab 
       - run: ./claat-linux-amd64 export -o << parameters.output_dir >> << parameters.inputs >>
