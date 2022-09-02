@@ -4,9 +4,6 @@ version: 2.1
 orbs:
   go: circleci/go@0.2.0
 
-commands:
-
-
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
@@ -26,10 +23,11 @@ jobs:
         description: Input files, which can contain wildcards
     steps:
       - go/install
-      - run: go get github.com/googlecodelabs/tools/claat@latest
+      - run: wget https://github.com/googlecodelabs/tools/releases/download/v2.2.4/claat-linux-amd64
+      - run: chmod +x claat-linux-amd64
       - checkout
       - run: mkdir -p << parameters.output_dir >>
-      - run: claat export -o << parameters.output_dir >> << parameters.inputs >>
+      - run: ./claat-linux-amd64 export -o << parameters.output_dir >> << parameters.inputs >>
 
 
 # Invoke jobs via workflows
