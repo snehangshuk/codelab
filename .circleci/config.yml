@@ -26,6 +26,9 @@ jobs:
       - run: wget https://github.com/googlecodelabs/tools/releases/download/v2.2.4/claat-linux-amd64
       - run: chmod +x claat-linux-amd64
       - run: mkdir -p << parameters.output_dir >>
+      - add_ssh_keys:
+          fingerprints:
+            - "SHA256:tl0voEj5iXMITkMD3xioGbTjUHIgjYDY8laKoH45bLU"
       - run: git clone git@github.com:snehangshuk/codelab.git
       - run: cd codelab 
       - run: ./claat-linux-amd64 export -o << parameters.output_dir >> << parameters.inputs >>
