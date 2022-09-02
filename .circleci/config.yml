@@ -26,7 +26,7 @@ jobs:
         description: Input files, which can contain wildcards
     steps:
       - go/install
-      - run: go install github.com/googlecodelabs/tools/claat@latest
+      - run: go get github.com/googlecodelabs/tools/claat@latest
       - checkout
       - run: mkdir -p << parameters.output_dir >>
       - run: claat export -o << parameters.output_dir >> << parameters.inputs >>
