@@ -28,6 +28,10 @@ jobs:
           docker pull bpetetot/claat
           docker container run -v $(pwd):/app bpetetot/claat export -f html -o /app/build mylab.md
         id: claat-step  
+      # Set permissions for the build/docs directory
+      - name: Set permissions for build/docs directory
+        run: chmod -R 777 build/docs  
+        if: steps.claat-step.outcome == 'success'
       - name: Copy the img directory in build directory
         run: cp -rvf ./img build/docs/
         if: steps.claat-step.outcome == 'success'
