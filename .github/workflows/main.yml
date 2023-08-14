@@ -26,5 +26,24 @@ jobs:
       - name: Copy the labs directory
         uses: actions/upload-artifact@v3
         with:
-          name: labs
-          path: . # or path/to/artifact
+          name: build-artifact
+          path: build/
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      # Download the build artifact
+      - name: Download build artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: build-artifact
+          path: build/
+
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build/ # replace with the path to your build directory
