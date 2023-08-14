@@ -29,7 +29,9 @@ jobs:
           docker container run -v $(pwd):/app bpetetot/claat export -f html -o /app/build mylab.md
         id: claat-step  
       - name: Copy the img directory in build directory
-        run: cp -r img/ build/docs/
+        run:  |
+           ls -l build/
+           cp -r img/ build/docs/
         if: steps.claat-step.outcome == 'success'
       - name: Copy the build directory
         uses: actions/upload-artifact@v3
