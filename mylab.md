@@ -1,5 +1,5 @@
 ---
-id: bootcamp-journey-setup
+id: 
 summary: In this codelab, you'll be able understand what Kubernetes is installthe tools required to get started with Kubernetes cluster
 status: [published]
 authors: Snehangshu Karmakar
