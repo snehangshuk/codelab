@@ -22,8 +22,11 @@ jobs:
       - name: Run a multi-line script
         run: |
           docker pull bpetetot/claat
-          docker container run -v $(pwd):/app bpetetot/claat export -f html -o /app/build mylab.md && cp -r /app/img /app/build/docs
+          docker container run -v $(pwd):/app bpetetot/claat export -f html -o /app/build mylab.md && chmod -R 777 /app/build/docs
         id: claat-step
+      # Copy the img directory into the docs directory inside the build directory
+      - name: Copy the img directory into docs directory
+        run: cp -r img/ build/docs/  
       - name: Copy the build directory
         uses: actions/upload-artifact@v3
         with:
