@@ -18,14 +18,18 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+      - name: Create build directory
+        run: |
+          mkdir -p build
+          chmod -R 777 build  
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
           docker pull bpetetot/claat
-          docker container run -v $(pwd):/app bpetetot/claat export -f html -o /app/build mylab.md
+          docker container run -v $(pwd):/app bpetetot/claat export -f html -o build mylab.md
         id: claat-step  
       - name: Copy the img directory in build directory
-        run: docker container run -v $(pwd):/app cp -r /app/img /app/build
+        run: cp -r img/ build/
         if: steps.claat-step.outcome == 'success'
       - name: Copy the build directory
         uses: actions/upload-artifact@v3
