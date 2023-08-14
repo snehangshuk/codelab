@@ -24,7 +24,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           docker pull bpetetot/claat
-          docker container run -v $(pwd):/app bpetetot/claat export -f html -o /app/build mylab.md && chmod -R 777 /app/build/docs
+          docker container run -v $(pwd):/app bpetetot/claat export -f html -o /app/build mylab.md
         id: claat-step
       # Change permissions for the entire build directory
       - name: Change permissions for build directory
