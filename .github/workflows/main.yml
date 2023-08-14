@@ -20,13 +20,13 @@ jobs:
         uses: actions/checkout@v3
       - name: Create build directory
         run: |
-          mkdir -p build/docs
+          mkdir -p build
           chmod -R 777 build  
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
           docker pull bpetetot/claat
-          docker container run -v $(pwd):/app bpetetot/claat export -f html -o build mylab.md
+          docker container run -v $(pwd):/app bpetetot/claat export -f html -o /app/build mylab.md
         id: claat-step  
       - name: Copy the img directory in build directory
         run: cp -r img/ build/docs/
