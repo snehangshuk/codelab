@@ -1,105 +1,73 @@
 
-
 <!doctype html>
+
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
   <title>Bootcamp Journey Setup Guide</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
-  <link rel="stylesheet" href="https://storage.googleapis.comstyles/codelab.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
   <style>
-    html {
-        height: 100%;
-        margin: 0;
-        padding: 0;
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
     }
   </style>
 </head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="docs"
+                  title="Bootcamp Journey Setup Guide"
+                  environment="web"
+                  feedback-link="https://github.com/snehangshuk/codelab/issues">
+    
+      <google-codelab-step label="Laptop Setup Validation" duration="0">
+        <p>If you have completed <a href="http://go/engdayone" target="_blank">go/engdayone</a> steps (also known as <a href="http://go/HowtoSSH" target="_blank">go/HowToSSH</a>) you will be able to pass all of the validations. If you run into issues during setup or validation please see the Troubleshooting Setup section or reach out to support at #techlounge or <a href="http://go/helpin" target="_blank">go/helpin</a>.</p>
+<h2 is-upgraded><strong>1. Validate That Eng Tools Are Installed</strong></h2>
+<p>Before you can create SSH keys you&#39;ll need to have the eng_tools installed.</p>
+<p>To validate <code>eng_tools</code> are installed<br>From your terminal, run the following command:</p>
+<pre><code>$ mint -h
+</code></pre>
+<p>If you see the help documentation for <code>mint</code> go to <em>step 2</em> on go/HowToSSH. If not, follow <em>step 1</em> on <a href="http://go/howtossh" target="_blank">go/HowToSSH</a></p>
+<h2 is-upgraded><strong>2. Set Up Your SSH Keys</strong></h2>
+<p>If you&#39;ve completed <em>step 2 - 4</em> on <a href="go/howtossh" target="_blank">go/HowToSSH</a> and your keys are working proceed to the next validation step.</p>
+<p>In <strong>Gerrit</strong> with the steps in <a href="http://go/howtossh" target="_blank">go/HowToSSH</a><br>(keys propagate at 10 minutes after the hour, i.e. 12:10pm, and in some cases can take up to 2 hours to complete)</p>
+<p>In <strong>GitHub</strong> with the steps to <a href="https://docs.google.com/document/d/1zAMPT7TknuP0tparZxR-I7rLtlk2vJxtLORUq22VShs/edit#heading=h.h0uom4qlx37x" target="_blank">manually copy keys to GitHub</a></p>
+<p>aside negative</p>
+<p><strong>Note:</strong> For <strong>GitHub</strong> you might not need to copy the SSH keys as the current authentication uses Certificate Authority.</p>
+<h2 is-upgraded><strong>3. Verify Mint And Keys Are Working Together</strong></h2>
+<p>From your terminal, run the following command:</p>
+<pre><code>$ mint -h
+</code></pre>
+<p>You should see the help documentation for mint. If this fails, contact #techlounge, you may be missing several things.</p>
+<p>Test Gerrit repo<br>From your terminal, move to a folder you&#39;d like to store code in, run the following command:</p>
+<pre><code>$ mint clone bootcamp-backend
+</code></pre>
+<p>You should see something like this:</p>
+<pre><code>:heavy_check_mark: bootcamp-backend checked out to /Users/jsmith
+</code></pre>
 
-<body class="codelab-takeover">
-  <div class="codelab__toc">
-    <a href="index.html" class="toc-item toc-item--current">
-      <span class="toc-item__index">1</span>
-      <span class="toc-item__title">Laptop Setup Validation</span>
-    </a>
-    <a href="step-2.html" class="toc-item">
-      <span class="toc-item__index">2</span>
-      <span class="toc-item__title">Troubleshooting Setup</span>
-    </a>
-  </div>
 
-  <div class="codelab__step">
+      </google-codelab-step>
+    
+      <google-codelab-step label="Troubleshooting Setup" duration="2">
+        <p>If you ran into any problems during the laptop setup reach out to support on slack <a href="https://linkedin-randd.slack.com/archives/CV2LB21FG" target="_blank">#techlounge</a> or go/helpin. If you&#39;d like to troubleshoot yourself here are some common things you can try.</p>
 
-    <div class="step__header">
-      <a href="index.html" class="invis">
-        <svg fill="#FFFFFF" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 0h24v24H0z" fill="none"/>
-          <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
-        </svg>
-      </a>
 
-      <a href="https://storage.googleapis.comindex.html" title="Return to home page">
-        <svg fill="#FFFFFF" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-          <path d="M0 0h24v24H0z" fill="none"/>
-        </svg>
-      </a>
+      </google-codelab-step>
+    
+  </google-codelab>
 
-      <a href="step-2.html">
-        <svg fill="#FFFFFF" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 0h24v24H0z" fill="none"/>
-          <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
-        </svg>
-      </a>
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
 
-      <h1>Bootcamp Journey Setup Guide</h1>
-    </div>
-
-    <div class="step__body">
-      <h1>Bootcamp Journey Setup Guide</h1>
-      <h2>1. Laptop Setup Validation</h2>
-      <div><p>If you have completed <a href="http://go/engdayone" target="_blank">go/engdayone</a> steps (also known as <a href="http://go/HowtoSSH" target="_blank">go/HowToSSH</a>) you will be able to pass all of the validations. If you run into issues during setup or validation please see the Troubleshooting Setup section or reach out to support at #techlounge or <a href="http://go/helpin" target="_blank">go/helpin</a>.</p><h2><strong>1. Validate That Eng Tools Are Installed</strong></h2><p>Before you can create SSH keys you&#39;ll need to have the eng_tools installed.</p><p>To validate <code>eng_tools</code> are installed
-From your terminal, run the following command:</p><pre><code>$ mint -h
-</code></pre><p>If you see the help documentation for <code>mint</code> go to <em>step 2</em> on go/HowToSSH. If not, follow <em>step 1</em> on <a href="http://go/howtossh" target="_blank">go/HowToSSH</a></p><h2><strong>2. Set Up Your SSH Keys</strong></h2><p>If you&#39;ve completed <em>step 2 - 4</em> on <a href="go/howtossh" target="_blank">go/HowToSSH</a> and your keys are working proceed to the next validation step.</p><p>In <strong>Gerrit</strong> with the steps in <a href="http://go/howtossh" target="_blank">go/HowToSSH</a>
-(keys propagate at 10 minutes after the hour, i.e. 12:10pm, and in some cases can take up to 2 hours to complete)</p><p>In <strong>GitHub</strong> with the steps to <a href="https://docs.google.com/document/d/1zAMPT7TknuP0tparZxR-I7rLtlk2vJxtLORUq22VShs/edit#heading=h.h0uom4qlx37x" target="_blank">manually copy keys to GitHub</a></p><p>aside negative</p><p><strong>Note:</strong> For <strong>GitHub</strong> you might not need to copy the SSH keys as the current authentication uses Certificate Authority.</p><h2><strong>3. Verify Mint And Keys Are Working Together</strong></h2><p>From your terminal, run the following command:</p><pre><code>$ mint -h
-</code></pre><p>You should see the help documentation for mint. If this fails, contact #techlounge, you may be missing several things.</p><p>Test Gerrit repo
-From your terminal, move to a folder you&#39;d like to store code in, run the following command:</p><pre><code>$ mint clone bootcamp-backend
-</code></pre><p>You should see something like this:</p><pre><code>:heavy_check_mark: bootcamp-backend checked out to /Users/jsmith
-</code></pre></div>
-    </div>
-
-  </div>
-
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-49880327-14', 'auto');
-
-    (function() {
-      var gaCodelab = '';
-      if (gaCodelab) {
-        ga('create', gaCodelab, 'auto', {name: 'codelab'});
-      }
-
-      var gaView;
-      var parts = location.search.substring(1).split('&');
-      for (var i = 0; i < parts.length; i++) {
-        var param = parts[i].split('=');
-        if (param[0] === 'viewga') {
-          gaView = param[1];
-          break;
-        }
-      }
-      if (gaView && gaView !== gaCodelab) {
-        ga('create', gaView, 'auto', {name: 'view'});
-      }
-    })();
-  </script>
-  <script src="https://storage.googleapis.comscripts/codelab.js" async></script>
 </body>
 </html>
