@@ -30,6 +30,7 @@ jobs:
         id: claat-step  
       - name: Copy the img directory in build directory
         run:  |
+           ls -l .
            ls -l build/
            cp -r img/ build/docs/
         if: steps.claat-step.outcome == 'success'
