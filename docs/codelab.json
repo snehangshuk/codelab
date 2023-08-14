@@ -3,8 +3,8 @@
   "format": "offline",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2023-08-14T20:17:14Z",
-  "id": "bootcamp-journey-setup",
+  "updated": "2023-08-14T20:36:51Z",
+  "id": "docs",
   "duration": 2,
   "title": "Bootcamp Journey Setup Guide",
   "authors": "Snehangshu Karmakar",
@@ -22,5 +22,5 @@
     "web"
   ],
   "feedback": "https://github.com/snehangshuk/codelab/issues",
-  "url": "bootcamp-journey-setup"
+  "url": "docs"
 }
