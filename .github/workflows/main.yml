@@ -20,4 +20,9 @@ jobs:
       - name: Run a multi-line script
         run: |
           docker pull bpetetot/claat,
-          docker container run -it -v $(pwd):/app bpetetot/claat export mylab.md
+          docker container run -it -v $(pwd):/app bpetetot/claat export -o labs mylab.md
+      - name: Copy the labs directory
+        uses: actions/upload-artifact@v3
+        with:
+          name: labs
+          path: . # or path/to/artifact
