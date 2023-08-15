@@ -5,32 +5,36 @@ name: CodeLab CI
 # Controls when the workflow will run
 on:
   # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  push:
+    branches: [main]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# A workflow run is made up of one job that can run sequentially
 jobs:
-  # This workflow contains a single job called "build"
+  # This workflow contains two jobs named "build" and "deploy
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout repository
         uses: actions/checkout@v3
+      # Installs claat
       - name: Install claat@latest
         run: go install github.com/googlecodelabs/tools/claat@latest
+      # Build html
       - name: Build html
         run: ~/go/bin/claat export -f html -o build mylab.md
       # Copy the img directory into the docs directory inside the build directory
       - name: Copy the img directory into docs directory
-        run: cp -r img/ build/docs/  
+        run: cp -r img/ build/docs/
       - name: Copy the build directory
         uses: actions/upload-artifact@v3
         with:
           name: build-artifact
           path: build/
-
+  # Deploy to GitHub Pages
   deploy:
     needs: build
     runs-on: ubuntu-latest
