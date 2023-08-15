@@ -9,7 +9,7 @@
   <title>Bootcamp Journey Setup Guide</title>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
   <style>
     .success {
       color: #1e8e3e;
@@ -20,8 +20,9 @@
   </style>
 </head>
 <body>
-  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
   <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
                   id="docs"
                   title="Bootcamp Journey Setup Guide"
                   environment="web"
@@ -31,22 +32,22 @@
         <p>If you have completed <a href="http://go/engdayone" target="_blank">go/engdayone</a> steps (also known as <a href="http://go/HowtoSSH" target="_blank">go/HowToSSH</a>) you will be able to pass all of the validations. If you run into issues during setup or validation please see the Troubleshooting Setup section or reach out to support at #techlounge or <a href="http://go/helpin" target="_blank">go/helpin</a>.</p>
 <h2 is-upgraded><strong>1. Validate That Eng Tools Are Installed</strong></h2>
 <p>Before you can create SSH keys you&#39;ll need to have the eng_tools installed.</p>
-<p>To validate <code>eng_tools</code> are installed<br>From your terminal, run the following command:</p>
+<p>To validate <code>eng_tools</code> are installed From your terminal, run the following command:</p>
 <pre><code>$ mint -h
 </code></pre>
 <p>If you see the help documentation for <code>mint</code> go to <em>step 2</em> on go/HowToSSH. If not, follow <em>step 1</em> on <a href="http://go/howtossh" target="_blank">go/HowToSSH</a></p>
 <h2 is-upgraded><strong>2. Set Up Your SSH Keys</strong></h2>
 <p>If you&#39;ve completed <em>step 2 - 4</em> on <a href="go/howtossh" target="_blank">go/HowToSSH</a> and your keys are working proceed to the next validation step.</p>
-<p>In <strong>Gerrit</strong> with the steps in <a href="http://go/howtossh" target="_blank">go/HowToSSH</a><br>(keys propagate at 10 minutes after the hour, i.e. 12:10pm, and in some cases can take up to 2 hours to complete)</p>
+<p>In <strong>Gerrit</strong> with the steps in <a href="http://go/howtossh" target="_blank">go/HowToSSH</a> (keys propagate at 10 minutes after the hour, i.e. 12:10pm, and in some cases can take up to 2 hours to complete)</p>
 <p>In <strong>GitHub</strong> with the steps to <a href="https://docs.google.com/document/d/1zAMPT7TknuP0tparZxR-I7rLtlk2vJxtLORUq22VShs/edit#heading=h.h0uom4qlx37x" target="_blank">manually copy keys to GitHub</a></p>
-<p>aside negative</p>
-<p><strong>Note:</strong> For <strong>GitHub</strong> you might not need to copy the SSH keys as the current authentication uses Certificate Authority.</p>
+<aside class="warning"><p><strong>Note:</strong> For <strong>GitHub</strong> you might not need to copy the SSH keys as the current authentication uses Certificate Authority.</p>
+</aside>
 <h2 is-upgraded><strong>3. Verify Mint And Keys Are Working Together</strong></h2>
 <p>From your terminal, run the following command:</p>
 <pre><code>$ mint -h
 </code></pre>
 <p>You should see the help documentation for mint. If this fails, contact #techlounge, you may be missing several things.</p>
-<p>Test Gerrit repo<br>From your terminal, move to a folder you&#39;d like to store code in, run the following command:</p>
+<p>Test Gerrit repo From your terminal, move to a folder you&#39;d like to store code in, run the following command:</p>
 <pre><code>$ mint clone bootcamp-backend
 </code></pre>
 <p>You should see something like this:</p>
@@ -64,10 +65,11 @@
     
   </google-codelab>
 
-  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
-  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
-  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
-  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
 
 </body>
 </html>
